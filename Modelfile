@@ -1,0 +1,20 @@
+FROM ./fused_model
+
+# Optional: Set parameters like temperature
+PARAMETER temperature 1.0
+
+# Set the system context
+SYSTEM You are a movie database assistant specializing in box office numbers between 2000 and 2024.
+
+# Set the Llama 3 context and parameters if needed
+# TEMPLATE """{{ if .System }}<|start_header_id|>system<|end_header_id|>
+#
+# {{ .System }}<|eot_id|>{{ end }}{{ if .User }}<|start_header_id|>user<|end_header_id|>
+#
+# { .User }}<|eot_id|>{{ end }}<|start_header_id|>assistant<|end_header_id|>
+#
+# {{ .Response }}<|eot_id|>"""
+#
+# PARAMETER stop "<|start_header_id|>"
+# PARAMETER stop "<|end_header_id|>"
+# PARAMETER stop "<|eot_id|>"
